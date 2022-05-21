@@ -1,0 +1,26 @@
+##############################
+#Spring Congig
+##############################
+spring:
+  profiles:
+    active: Test
+
+
+---
+##########################################################
+#
+#
+#   Test Profile
+#
+#
+##########################################################
+spring:
+  profiles: Test
+  main:
+    lazy-initialization: true
+
+restapi:
+  baseUrl: https://api3.fox.com
+  register: /v2.0/register
+  login: /v2.0/login
+  reset: /v2.0/reset
