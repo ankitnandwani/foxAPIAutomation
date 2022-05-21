@@ -9,15 +9,6 @@ public class RandomUtils {
 
     private static final Random random = new Random();
 
-    public static String randomDateOfBirth(){
-
-        int minDay = (int) LocalDate.of(1950, 1, 1).toEpochDay();
-        int maxDay = (int) LocalDate.of(2018, 1,1).toEpochDay();
-        long randomDay = minDay + random.nextInt(maxDay - minDay);
-
-        return LocalDate.ofEpochDay(randomDay).toString();
-    }
-
     public static String randomString(int length){
         int leftLimit = 48; // numeral '0'
         int rightLimit = 122; // letter 'z'
@@ -27,10 +18,6 @@ public class RandomUtils {
                 .limit(length)
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
-    }
-
-    public static int randomNumber(int inclusiveLimit){
-        return random.nextInt(inclusiveLimit) + 1;
     }
 
     public static String randomGender(){
